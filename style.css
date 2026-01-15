@@ -423,7 +423,7 @@ body {
     gap: 14px;
 }
 
-/* Order request button */
+/* Order request button - hidden by default, shown only on cart page */
 .order-request-button {
     background: #00539b;
     color: #ffffff;
@@ -432,6 +432,11 @@ body {
     border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
+    display: none;
+}
+
+.cart-page .order-request-button {
+    display: inline-block;
 }
 
 .order-request-button:hover {
