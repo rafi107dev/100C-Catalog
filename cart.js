@@ -43,6 +43,50 @@ function updateCartCount(cart) {
 
 
 // ============================================================
+// Custom Toast Notification
+// ============================================================
+function showToast(message, type) {
+    type = type || "success";
+
+    // Remove any existing toast
+    var existingToast = document.querySelector(".cart-toast");
+    if (existingToast) {
+        existingToast.remove();
+    }
+
+    // Create toast element
+    var toast = document.createElement("div");
+    toast.className = "cart-toast cart-toast-" + type;
+
+    // Icon based on type
+    var icon = type === "success" ? "✓" : "ℹ";
+
+    toast.innerHTML =
+        '<span class="cart-toast-icon">' + icon + '</span>' +
+        '<span class="cart-toast-message">' + message + '</span>' +
+        '<button class="cart-toast-close">&times;</button>';
+
+    document.body.appendChild(toast);
+
+    // Close button
+    toast.querySelector(".cart-toast-close").addEventListener("click", function() {
+        toast.classList.remove("cart-toast-show");
+        setTimeout(function() { toast.remove(); }, 300);
+    });
+
+    // Trigger animation
+    setTimeout(function() { toast.classList.add("cart-toast-show"); }, 10);
+
+    // Auto-hide after 3 seconds
+    setTimeout(function() {
+        if (toast.parentNode) {
+            toast.classList.remove("cart-toast-show");
+            setTimeout(function() { toast.remove(); }, 300);
+        }
+    }, 3000);
+}
+
+// ============================================================
 // Add to cart behaviour on catalog pages
 // ============================================================
 //
@@ -55,7 +99,30 @@ function setupAddToCartButtons() {
     }
 
     buttons.forEach(btn => {
+        // Create quantity selector wrapper
+        const wrapper = document.createElement("div");
+        wrapper.className = "add-to-cart-wrapper";
+
+        // Create quantity select dropdown
+        const qtySelect = document.createElement("select");
+        qtySelect.className = "qty-select";
+        qtySelect.setAttribute("aria-label", "Quantity");
+
+        // Add options 1-20
+        for (let i = 1; i <= 20; i++) {
+            const option = document.createElement("option");
+            option.value = i;
+            option.textContent = i;
+            qtySelect.appendChild(option);
+        }
+
+        // Insert wrapper before button
+        btn.parentNode.insertBefore(wrapper, btn);
+        wrapper.appendChild(qtySelect);
+        wrapper.appendChild(btn);
+
         btn.addEventListener("click", () => {
+            const quantity = parseInt(qtySelect.value, 10) || 1;
 
             let cart = loadCart();
             const sku = btn.dataset.sku;
@@ -75,7 +142,7 @@ function setupAddToCartButtons() {
                            btn.dataset["price-50"] || "0") || 0;
 
             if (existing) {
-                existing.quantity += 1;
+                existing.quantity += quantity;
             } else {
                 cart.push({
                     sku: sku,
@@ -84,12 +151,15 @@ function setupAddToCartButtons() {
                     priceNormal: priceNormal,
                     price10: price10,
                     price50: price50,
-                    quantity: 1
+                    quantity: quantity
                 });
             }
 
             saveCart(cart);
-            alert("Added to cart.");
+
+            const itemName = btn.dataset.name || "Item";
+            const caseWord = quantity === 1 ? "case" : "cases";
+            showToast(quantity + " " + caseWord + " of " + itemName + " added to cart", "success");
         });
     });
 }
