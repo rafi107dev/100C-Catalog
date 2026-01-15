@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (typeof updateCartCount === "function") {
             updateCartCount(loadCart());
         }
+
+        // Close dropdown menu on scroll (especially for mobile)
+        var dropdownToggle = document.querySelector(".nav-dropdown-toggle");
+        if (dropdownToggle) {
+            window.addEventListener("scroll", function() {
+                dropdownToggle.blur();
+            }, { passive: true });
+        }
     });
     loadInclude("site-footer", "includes/footer.html");
 });
