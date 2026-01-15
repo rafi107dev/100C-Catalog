@@ -1205,26 +1205,66 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    .shared-header-inner img.logo {
-        max-width: 140px;
-        height: auto;
+/* =====================================
+   Tablet adjustments (601px - 800px)
+   ===================================== */
+@media (max-width: 800px) and (min-width: 601px) {
+    .order-info {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home-wrapper {
+        padding: 30px 15px;
+    }
+
+    .home-buttons .button-primary,
+    .home-buttons .button-secondary {
+        max-width: 280px;
     }
 }
 
-@media (max-width: 480px) {
-    .catalog-title-block h1 {
+/* =====================================
+   Small tablet / large phone (max 600px)
+   ===================================== */
+@media (max-width: 600px) {
+    .order-info {
+        margin: 0 10px 24px 10px;
+        padding: 16px 16px 16px 18px;
+        border-left-width: 4px;
+    }
+
+    .order-info h2 {
         font-size: 18px;
-        white-space: nowrap;
+        gap: 8px;
+    }
+
+    .order-info h2::before {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+
+    .order-info li {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .home-wrapper {
+        padding: 25px 12px;
+    }
+
+    .home-text {
+        font-size: 14px;
+        padding: 0 10px;
     }
 }
 
-@media (max-width: 480px) {
-    .section {
-        scroll-margin-top: 120px;
-    }
-}
-
+/* =====================================
+   Small screens (max 560px)
+   ===================================== */
 @media (max-width: 560px) {
     .shared-header-inner {
         flex-wrap: wrap;
@@ -1236,5 +1276,81 @@ body {
     .main-nav {
         width: 100%;
         justify-content: space-between;
+    }
+
+    .catalog-title-block {
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .catalog-title-block p {
+        font-size: 12px;
+    }
+}
+
+/* =====================================
+   Mobile phones (max 480px)
+   ===================================== */
+@media (max-width: 480px) {
+    .shared-header-inner img.logo {
+        max-width: 140px;
+        height: auto;
+    }
+
+    .catalog-title-block h1 {
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .section {
+        scroll-margin-top: 120px;
+    }
+
+    .order-info {
+        padding: 14px 14px 14px 16px;
+        border-radius: 8px;
+        margin: 0 8px 20px 8px;
+    }
+
+    .order-info h2 {
+        font-size: 16px;
+    }
+
+    .order-info h2::before {
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+    }
+
+    .order-info li {
+        font-size: 12px;
+        line-height: 1.5;
+        padding-left: 20px;
+    }
+
+    .home-buttons {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .home-buttons .button-primary,
+    .home-buttons .button-secondary {
+        padding: 12px 18px;
+        font-size: 15px;
+    }
+
+    .breadcrumbs {
+        font-size: 0.8rem;
+        padding: 0 10px;
+    }
+
+    .section-jumps {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+        margin: 0 10px 4px 10px;
+    }
+
+    .section-jumps a {
+        margin-right: 6px;
     }
 }
