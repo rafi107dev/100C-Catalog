@@ -25,6 +25,35 @@ body {
     opacity: 0.9;
 }
 
+/* Closeouts label under logo */
+.logo-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-closeouts-label {
+    display: block;
+    background: #00539b;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 3px 12px;
+    border-radius: 3px;
+    margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+    .logo-closeouts-label {
+        font-size: 9px;
+        letter-spacing: 2px;
+        padding: 2px 8px;
+        margin-top: 2px;
+    }
+}
+
 /* =====================================
    Homepage layout
    ===================================== */
