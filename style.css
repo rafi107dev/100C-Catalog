@@ -338,29 +338,38 @@ body {
 }
 
 
+/* Dropdown toggle button */
 .nav-dropdown-toggle {
-    border: 1px solid #dddddd;
-    background: #ffffff;
+    border: none;
+    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    border-radius: 4px;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 8px;
     text-decoration: none;
-    color: #333333;
+    color: #ffffff;
     font-size: 0.9rem;
-    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.25);
 }
 
 .nav-dropdown-toggle::after {
     content: "▾";
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+    transition: transform 0.25s ease;
 }
 
 .nav-dropdown-toggle:hover {
-    background-color: #f2f2f2;
-    color: #000000;
+    background: linear-gradient(135deg, #0077ee 0%, #0066cc 100%);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.35);
+    transform: translateY(-1px);
     cursor: pointer;
+}
+
+.closeout-dropdown:hover .nav-dropdown-toggle::after {
+    transform: rotate(180deg);
 }
 
 /* Dropdown menu */
@@ -368,52 +377,117 @@ body {
     position: absolute;
     right: 0;
     top: 100%;
-    margin-top: 0;              /* removed the gap under the button - was 4px */
-    min-width: 220px;
+    margin-top: 8px;
+    min-width: 260px;
     background: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 6px 0;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 8px;
     display: none;
     z-index: 20;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .nav-dropdown-menu a {
-    display: block;
-    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
     text-decoration: none;
     color: #333333;
     font-size: 0.9rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.nav-dropdown-menu a::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: #0066cc;
+    border-radius: 50%;
+    margin-right: 12px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
 .nav-dropdown-menu a:hover {
-    background-color: #f5f5f5;
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.08) 0%, rgba(0, 102, 204, 0.04) 100%);
+    color: #0066cc;
+    padding-left: 20px;
 }
 
-/* Show dropdown when the Closeout pages button OR the menu is hovered/focused */
+.nav-dropdown-menu a:hover::before {
+    opacity: 1;
+}
+
+/* Show dropdown when hovered/focused */
 .closeout-dropdown:hover .nav-dropdown-menu,
 .closeout-dropdown:focus-within .nav-dropdown-menu,
 .nav-dropdown-menu:hover {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
     cursor: default;
 }
 
 @media (max-width: 560px) {
     .nav-dropdown-toggle {
         font-size: 0;
-        padding: 8px;
-        width: 38px;
-        height: 38px;
-        background-image: url("https://cdn-icons-png.flaticon.com/512/56/56763.png");
-        background-size: 22px;
-        background-repeat: no-repeat;
-        background-position: center;
-        border-radius: 4px;
+        padding: 0;
+        width: 42px;
+        height: 42px;
+        background-color: #0066cc;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
+        position: relative;
+    }
+
+    /* Create hamburger icon with CSS */
+    .nav-dropdown-toggle::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 2px;
+        background: #ffffff;
+        box-shadow: 0 -6px 0 #ffffff, 0 6px 0 #ffffff;
+        border-radius: 1px;
     }
 
     .nav-dropdown-toggle::after {
         content: "";
+        display: none;
+    }
+
+    .nav-dropdown-toggle:hover {
+        transform: none;
+    }
+
+    .closeout-dropdown:hover .nav-dropdown-toggle::after {
+        transform: none;
+    }
+
+    .nav-dropdown-menu {
+        position: fixed;
+        top: 70px;
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        width: auto;
+        border-radius: 16px;
+        padding: 12px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-dropdown-menu a {
+        padding: 14px 16px;
+        font-size: 1rem;
     }
 }
 
