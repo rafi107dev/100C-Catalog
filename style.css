@@ -754,7 +754,7 @@ body {
 /* Make sections scroll below sticky header */
 .section {
     margin-bottom: 35px;
-    scroll-margin-top: 200px;
+    scroll-margin-top: 260px;
 }
 
 /* Section titles (Libbey Glass, Other Glass, etc.) */
@@ -1645,7 +1645,7 @@ body {
     }
 
     .section {
-        scroll-margin-top: 140px;
+        scroll-margin-top: 200px;
     }
 
     /* Section titles - larger for readability */
