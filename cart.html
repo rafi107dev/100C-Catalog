@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Closeout Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Shared site styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+
+
+ <body id="top">
+
+ <div class="page-wrapper">
+
+     <!-- =========================================
+          Sticky header: shared header + cart title
+          ========================================= -->
+     <div class="page-header-sticky">
+
+         <!-- Shared logo + nav -->
+         <div id="shared-header"></div>
+
+         <!-- Page specific title for the cart -->
+         <div class="catalog-title-block">
+             <h1>Your Closeout Cart</h1>
+             <p>Review your case selections before submitting your order request.</p>
+         </div>
+
+
+
+
+
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="index.html">Home</a> ›
+            <span>Your Closeout Cart</span>
+        </div>
+
+    </div> <!-- end page-header-sticky -->
+
+
+    <!-- =========================================
+       Cart table and item controls
+       ========================================= -->
+  <section class="section">
+      <div class="cart-wrapper">
+
+          <h2 class="section-title">Cart Details</h2>
+
+          <!-- Message shown when there are no items in the cart -->
+          <p id="cart-empty-message">
+              Your cart is currently empty. Visit the closeout catalog pages to add items.
+          </p>
+
+          <div class="cart-header">
+              <p>
+                Adjust the number of cases or remove items as needed.
+                When finished, click Proceed to Order Request so your cart
+                summary is copied and ready to paste into the Order Request Form.
+              </p>
+          </div>
+
+
+            <!-- Cart table body will be filled by cart.js -->
+            <table class="cart-table">
+                <thead>
+                <tr>
+                    <th>Item name</th>
+                    <th>Item number</th>
+                    <th>Pcs per case</th>
+                    <th>Cases</th>
+                    <th>Normal</th>
+                    <th>Closeout 10+</th>
+                    <th>Closeout 50+</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody id="cart-body">
+                <!-- Rows are injected by cart.js -->
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="9" id="cart-grand-total" style="text-align:right; font-weight:bold; padding:10px 8px;">
+                        Grand Total: $0.00
+                    </td>
+                </tr>
+                </tfoot>
+
+            </table>
+        </div>
+    </section>
+
+
+    <!-- =========================================
+     Summary and Google Form instructions
+     ========================================= -->
+<section class="section">
+    <div class="cart-wrapper">
+
+        <h2 class="section-title">Copy or email your cart</h2>
+
+        <p>
+            When you click Proceed to Order Request, your cart summary is automatically copied to your clipboard
+            so you can paste it into the <strong>Order Request Form</strong>.
+            You can also use the buttons below to clear the cart... or copy the summary manually if you would like to email it to us.
+        </p>
+
+        <!-- Summary text area that cart.js fills in for copy-and-paste -->
+        <textarea id="cart-summary" class="cart-summary-box" readonly></textarea>
+
+        <!-- Cart control buttons and form link -->
+        <div class="cart-controls">
+            <button type="button" id="clear-cart-button">
+                Clear Cart
+            </button>
+            <button type="button" id="copy-summary-button">
+                Copy Summary for Email
+            </button>
+            <a href="#"
+               class="button-primary order-request-button">
+                Proceed to Order Request Form
+            </a>
+        </div>
+
+    </div> <!-- end cart-wrapper -->
+</section>
+
+
+
+    <!-- =========================================
+         Shared catalog footer
+         ========================================= -->
+         <!-- Footer settings are in file: footer.html -->
+          <div id="site-footer"></div>
+
+    <!-- =========================================
+         Sticky bottom Proceed bar on cart page
+         ========================================= -->
+    <div class="sticky-order-footer">
+        <div class="sticky-order-inner">
+            <span class="sticky-order-text">
+                Ready to submit your case selections?
+            </span>
+            <a href="#"
+               class="button-primary order-request-button sticky-order-button">
+                Proceed to Order Request Form
+            </a>
+        </div>
+    </div>
+
+</div> <!-- end page-wrapper -->
+
+<!-- Cart logic (shared across pages) -->
+<script src="cart.js"></script>
+<script src="includes.js"></script>
+</body>
+</html>

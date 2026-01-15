@@ -1,0 +1,1209 @@
+/* =====================================
+   Base layout and typography
+   ===================================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    color: #333333;
+}
+
+/* =====================================
+   Logo links and hover effects
+   ===================================== */
+.logo-link,
+.home-logo-link,
+.footer-logo-link {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.logo-link:hover img,
+.home-logo-link:hover img,
+.footer-logo-link:hover img {
+    opacity: 0.9;
+}
+
+/* =====================================
+   Homepage layout
+   ===================================== */
+.home-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.home-logo {
+    max-width: 280px;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.home-title {
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.home-text {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* =====================================
+   Homepage buttons block
+   ===================================== */
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.home-buttons .button-primary,
+.home-buttons .button-secondary {
+    display: block;
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Ordering info card on homepage */
+.order-info {
+    max-width: 700px;
+    margin: 0 auto 24px;
+    padding: 16px 18px;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+.order-info h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.order-info ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.order-info li {
+    margin-bottom: 6px;
+}
+
+/* =====================================
+   Buttons (shared)
+   ===================================== */
+.button-primary,
+.button-secondary {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Main primary button (dark blue) */
+.button-primary {
+    background: #00539b;
+    color: #ffffff;
+}
+
+.button-primary:hover {
+    background: #003e73;
+}
+
+/* Outline style secondary button */
+.button-secondary {
+    background: #ffffff;
+    color: #00539b;
+    border: 1px solid #00539b;
+}
+
+.button-secondary:hover {
+    background: #eef4fb;
+}
+
+/* =====================================
+   Shared footer on homepage
+   ===================================== */
+.site-footer {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #555555;
+    text-align: center;
+    padding: 10px 15px 20px 15px;
+    box-sizing: border-box;
+}
+
+.site-footer a {
+    color: #00539b;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* =====================================
+   Catalog page wrapper
+   ===================================== */
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px 60px 15px;
+    box-sizing: border-box;
+}
+
+/* Catalog header with logo and title */
+.catalog-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.catalog-header img.logo {
+    max-height: 60px;
+    width: auto;
+}
+
+/* Sticky header wrapper to keep logo, nav, jumps visible */
+.page-header-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 200;         /* was 100 */
+    background: #f3f3f3;
+    padding-bottom: 0px;   /* was 8px -no extra padding at the bottom */
+    margin-bottom: 6px;   /* was 16px, was 10px */
+}
+
+/* Page title block under the header, aligned to the right */
+.catalog-title-block {
+    max-width: 1000px;    /* was 1200px */
+    margin: 0 auto 0px;  /* was 4px auto 4px - was 0px auto 2px */
+    padding: 0 15px;
+    text-align: right;              /* moves title under the nav on the right */
+}
+
+.catalog-title-block h1 {
+    margin: 0;
+    font-size: 26px;    /* was 28px */
+    letter-spacing: 0.04em;
+}
+
+.catalog-title-block p {
+    margin: 0;             /* was 2px 0 0 0 */
+    font-size: 13px;    /* was 14px */
+    color: #666666;
+}
+
+/* =====================================
+   Top navigation bar / shared header row
+   ===================================== */
+
+/* Shared header row: logo on the left, nav on the right */
+.shared-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 15px 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Nav inside the shared header */
+.main-nav {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+/* Left side links: Home, Cart */
+.nav-left a {
+    text-decoration: none;
+    color: #333333;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-left a:hover {
+    background-color: #f2f2f2;
+    color: #000000;
+}
+
+/* Right side: dropdown for closeout pages */
+.nav-right {
+    position: relative;
+}
+
+/* Make nav-left empty and push elements right */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Order request button */
+.order-request-button {
+    background: #00539b;
+    color: #ffffff;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.order-request-button:hover {
+    background: #003f7c;
+}
+
+
+.nav-dropdown-toggle {
+    border: 1px solid #dddddd;
+    background: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333333;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-dropdown-toggle::after {
+    content: "▾";
+    font-size: 0.75rem;
+}
+
+.nav-dropdown-toggle:hover {
+    background-color: #f2f2f2;
+    color: #000000;
+    cursor: pointer;
+}
+
+/* Dropdown menu */
+.nav-dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 0;              /* removed the gap under the button - was 4px */
+    min-width: 220px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 6px 0;
+    display: none;
+    z-index: 20;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #333333;
+    font-size: 0.9rem;
+}
+
+.nav-dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Show dropdown when the Closeout pages button OR the menu is hovered/focused */
+.closeout-dropdown:hover .nav-dropdown-menu,
+.closeout-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown-menu:hover {
+    display: block;
+    cursor: default;
+}
+
+@media (max-width: 560px) {
+    .nav-dropdown-toggle {
+        font-size: 0;
+        padding: 8px;
+        width: 38px;
+        height: 38px;
+        background-image: url("https://cdn-icons-png.flaticon.com/512/56/56763.png");
+        background-size: 22px;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 4px;
+    }
+
+    .nav-dropdown-toggle::after {
+        content: "";
+    }
+}
+
+
+/* ------------------------------------------
+   Cart Icon
+   ------------------------------------------ */
+.cart-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333333;
+    font-size: 0.95rem;
+}
+
+.cart-link:hover {
+    background-color: #f2f2f2;
+}
+
+.cart-icon {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/833/833314.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+
+/* =====================================
+   Breadcrumbs
+   ===================================== */
+.breadcrumbs {
+   font-size: 0.9rem;      /* same as section-jumps */
+   color: #777777;
+   margin: 0 0 4px 0;   /* was 2px 0 px 0 */ /* closer to title and jump bar */
+}
+
+.breadcrumbs a {
+    color: #00539b;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+/* =====================================
+   Section jump bar
+   ===================================== */
+   .section-jumps {
+       max-width: 1000px;
+       margin: 0 auto 4px;    /* was 0 auto 6px */ /* a little closer to the breadcrumb */
+       padding: 4px 14px;     /* was 6px 14px */ /* less vertical padding inside the bar */
+       background-color: #fafafa;
+       border: 1px solid #eeeeee;
+       border-radius: 6px;
+       font-size: 0.9rem;
+       box-sizing: border-box;
+   }
+
+.section-jumps span {
+    margin-right: 8px;
+    font-weight: 600;
+}
+
+.section-jumps a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 500;
+}
+
+.section-jumps a:hover {
+    text-decoration: underline;
+}
+
+/* Make sections scroll below sticky header */
+.section {
+    margin-bottom: 35px;
+    scroll-margin-top: 200px;
+}
+
+/* Section titles (Libbey Glass, Other Glass, etc.) */
+.section-title {
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #cccccc;
+}
+
+/* =====================================
+   Item grid and cards
+   ===================================== */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+/* Individual item card */
+.item-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Image wrapper with fixed aspect ratio */
+.item-image-wrapper {
+    width: 100%;
+    padding-top: 66%;
+    position: relative;
+    border-radius: 6px;
+    background: #fafafa;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+/* Correct centering for item images */
+.item-image-wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Item text (name and small label) */
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+}
+
+.item-name {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.item-number {
+    font-size: 12px;
+    color: #777777;
+}
+
+/* Meta details: cases in stock, pieces per case */
+.item-meta {
+    font-size: 12px;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+/* =====================================
+   Pricing table
+   ===================================== */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.price-table th,
+.price-table td {
+    padding: 4px 3px;
+    text-align: right;
+}
+
+.price-table th:first-child,
+.price-table td:first-child {
+    text-align: left;
+}
+
+.price-table thead {
+    border-bottom: 1px solid #dddddd;
+}
+
+.price-table tbody tr:nth-child(odd) {
+    background: #fafafa;
+}
+
+/* Highlight closeout 50 plus row */
+.price-highlight {
+    font-weight: bold;
+    color: #b0281a;
+}
+
+/* =====================================
+   Item link and Add to cart area
+   ===================================== */
+.item-link {
+    margin-top: 4px;
+    text-align: right;
+    font-size: 12px;
+}
+
+.item-link a {
+    text-decoration: none;
+    color: #00539b;
+    font-weight: bold;
+}
+
+.item-link a:hover {
+    text-decoration: underline;
+}
+
+/* Make bottom Add to cart button have some spacing */
+.item-card .button-secondary.add-to-cart-button {
+    margin-top: 4px;
+}
+
+/* =====================================
+   Catalog footer
+   ===================================== */
+.catalog-footer {
+    position: relative;
+    margin-top: 25px;
+    padding-top: 12px;
+    border-top: 1px solid #cccccc;
+    font-size: 13px;
+    text-align: center;
+    color: #555555;
+}
+
+.catalog-footer a {
+    color: #00539b;
+    text-decoration: none;
+}
+
+.catalog-footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-logo {
+    margin-bottom: 8px;
+}
+
+.footer-logo img {
+    max-height: 26px;
+}
+
+/* =====================================
+   Sticky order bar (Google Form button)
+   ===================================== */
+.order-bar {
+    margin: 8px auto 6px;
+    max-width: 1000px;
+    text-align: left;
+}
+
+.order-bar-button {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #0055a5;
+    color: #ffffff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.order-bar-button:hover {
+    background: #003f7c;
+}
+
+/* =====================================
+   Back to top link (if used)
+   ===================================== */
+.back-to-top {
+    font-size: 12px;
+    text-align: right;
+    margin-top: 8px;
+}
+
+.back-to-top a {
+    color: #00539b;
+    text-decoration: none;
+}
+
+.back-to-top a:hover {
+    text-decoration: underline;
+}
+
+/* =====================================
+   Cart page layout
+   ===================================== */
+.cart-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 15px 40px 15px;
+    box-sizing: border-box;
+}
+
+/* Title on the cart page */
+.cart-title {
+    font-size: 26px;
+    margin: 0 0 10px 0;
+}
+
+/* Message when cart is empty */
+.cart-empty {
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+/* Cart layout: items table and summary column */
+.cart-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* Cart items table */
+.cart-items table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.cart-items th,
+.cart-items td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+}
+
+.cart-items th {
+    background: #f5f5f5;
+}
+
+/* Quantity input in cart */
+.cart-qty-input {
+    width: 60px;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+/* Remove button in cart */
+.cart-remove-button {
+    background: #ffffff;
+    border: 1px solid #cc0000;
+    color: #cc0000;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.cart-remove-button:hover {
+    background: #ffeaea;
+}
+
+/* Cart action row below table */
+.cart-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.cart-actions button,
+.cart-actions a {
+    font-size: 14px;
+}
+
+/* Checkout link to Google Form */
+.cart-checkout-link {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #0055a5;
+    color: #ffffff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cart-checkout-link:hover {
+    background: #003f7c;
+}
+
+/* Cart summary box on the right side */
+.cart-summary-box {   /* This is 1st instance, there is another on line 863 */
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    padding: 12px 14px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.cart-summary-box h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Cart summary totals line items */
+.cart-summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+/* Small note under totals */
+.cart-summary-note {
+    font-size: 12px;
+    color: #666666;
+    margin-top: 8px;
+}
+
+/* Cart summary text block for debugging or notes */
+.cart-summary {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #cccccc;
+    font-family: monospace;
+    font-size: 13px;
+    background: #f9f9f9;
+}
+
+/* -----------------------------------------
+   Cart Table Polish (Improved spacing, alignment)
+   ----------------------------------------- */
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.cart-table th {
+    background: #f7f7f7;
+    padding: 10px 8px;
+    font-weight: bold;
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+}
+
+.cart-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: middle;
+}
+
+/* Right-align all price columns */
+.cart-table td:nth-child(5),
+.cart-table td:nth-child(6),
+.cart-table td:nth-child(7) {
+    text-align: right;
+}
+
+/* Right-align Total column */
+.cart-table td:nth-child(8),
+.cart-table th:nth-child(8) {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Quantity input refinement */
+.cart-table input[type="number"] {
+    width: 70px;
+    padding: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Remove button styling */
+.cart-table button {
+    background: #ffffff;
+    color: #b00000;
+    border: 1px solid #b00000;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.cart-table button:hover {
+    background: #ffeaea;
+}
+
+/* Active price tier cell */
+.active-price-tier {
+    font-weight: bold;
+}
+
+
+/* -----------------------------------------
+   Summary box polish
+   ----------------------------------------- */
+.cart-summary-box {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    background: #fafafa;
+    margin-bottom: 10px;
+    resize: vertical;
+}
+
+/* -----------------------------------------
+   Cart controls (buttons under summary)
+   ----------------------------------------- */
+.cart-controls {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-controls button {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #888;
+    cursor: pointer;
+    background: #ffffff;
+}
+
+.cart-controls button:hover {
+    background: #f2f2f2;
+}
+
+/* The Proceed button stays styled via .button-primary */
+
+/* -----------------------------------------
+   Sticky bottom Proceed bar (cart page)
+   ----------------------------------------- */
+
+.sticky-order-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(243, 243, 243, 0.98);
+    border-top: 1px solid #cccccc;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+    z-index: 150;
+    padding: 8px 10px;
+}
+
+.sticky-order-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* center both elements together */
+    gap: 60px;                 /* nice “inch” of space on desktop */
+    font-size: 14px;
+}
+
+.sticky-order-text {
+    color: #444444;
+}
+
+/* Slightly smaller button inside sticky bar */
+.sticky-order-button {
+    padding: 8px 18px;
+    font-size: 14px;
+}
+
+/* Allow for footer height so content is not hidden */
+body {
+    padding-bottom: 60px;
+}
+
+/* On small screens stack text and button */
+@media (max-width: 600px) {
+    .sticky-order-inner {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .sticky-order-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-bottom: 90px !important;
+    }
+}
+
+
+
+/* -----------------------------------------
+   Desktop layout tweaks for cart table
+   ----------------------------------------- */
+@media (min-width: 900px) {
+    /* Keep cart content nicely centered on larger screens */
+    .cart-wrapper {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cart-table {
+        table-layout: fixed;
+    }
+
+    /* Column width guidance for better scanability */
+    .cart-table th:nth-child(1),
+    .cart-table td:nth-child(1) {
+        width: 28%;   /* Item name */
+    }
+
+    .cart-table th:nth-child(2),
+    .cart-table td:nth-child(2) {
+        width: 10%;   /* Item number */
+    }
+
+    .cart-table th:nth-child(3),
+    .cart-table td:nth-child(3) {
+        width: 10%;   /* Pcs per case */
+        text-align: center;
+    }
+
+    .cart-table th:nth-child(4),
+    .cart-table td:nth-child(4) {
+        width: 10%;   /* Cases (qty input) */
+        text-align: center;
+    }
+
+    .cart-table th:nth-child(5),
+    .cart-table td:nth-child(5),
+    .cart-table th:nth-child(6),
+    .cart-table td:nth-child(6),
+    .cart-table th:nth-child(7),
+    .cart-table td:nth-child(7) {
+        width: 10%;   /* Price columns */
+    }
+
+    .cart-table th:nth-child(8),
+    .cart-table td:nth-child(8) {
+        width: 12%;   /* Action */
+        text-align: center;
+    }
+
+    /* Slightly tighter vertical spacing on desktop */
+    .cart-table th,
+    .cart-table td {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+/* -----------------------------------------
+   Mobile layout for cart table (stacked rows)
+   ----------------------------------------- */
+@media (max-width: 480px) {   /* was 700px */
+
+    /* Slightly tighter padding on mobile */
+    .cart-wrapper {
+        padding: 15px 16px 30px 16px; /* was 15px 10px 30px 10px */
+    }
+
+    /* Hide the table header and turn rows into blocks */
+    .cart-table thead {
+        display: none;
+    }
+
+    .cart-table,
+    .cart-table tbody,
+    .cart-table tr,
+    .cart-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .cart-table tr {
+        margin-bottom: 14px;
+        border: 1px solid #dddddd;
+        border-radius: 6px;
+        background: #ffffff;
+        padding: 8px 10px;
+    }
+
+    .cart-table td {
+        border: none;
+        padding: 4px 0;
+        font-size: 13px;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    /* First cell (Item name) stands alone as the title line */
+    .cart-table td:nth-child(1) {
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 6px;
+    }
+
+    /* Add labels in front of the remaining cells */
+    .cart-table td:nth-child(2)::before {
+        content: "Item number";
+        font-weight: bold;
+        margin-right: 8px;
+    }
+
+    .cart-table td:nth-child(3)::before {
+        content: "Pcs per case";
+        font-weight: bold;
+        margin-right: 8px;
+    }
+
+    .cart-table td:nth-child(4)::before {
+        content: "Cases";
+        font-weight: bold;
+        margin-right: 8px;
+    }
+
+    .cart-table td:nth-child(5)::before {
+        content: "Normal";
+        font-weight: bold;
+        margin-right: 8px;
+    }
+
+    .cart-table td:nth-child(6)::before {
+        content: "Closeout 10+";
+        font-weight: bold;
+        margin-right: 8px;
+    }
+
+    .cart-table td:nth-child(7)::before {
+        content: "Closeout 50+";
+        font-weight: bold;
+        margin-right: 8px;
+    }
+
+    /* Action row: keep only the button aligned to the right */
+    .cart-table td:nth-child(8) {
+        justify-content: flex-end;
+        padding-top: 6px;
+    }
+
+    .cart-table td:nth-child(8)::before {
+        content: "";
+    }
+}
+
+/* =====================================
+   Responsive adjustments
+   ===================================== */
+   .home-buttons {
+       display: flex;
+       flex-direction: column;    /* always vertical */
+       gap: 12px;
+       align-items: center;
+       justify-content: center;
+       margin-bottom: 28px;
+   }
+
+
+@media (max-width: 800px) {
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .order-bar {
+        text-align: center;
+    }
+}
+
+/* =====================================
+   Print tweaks for catalog
+   ===================================== */
+@media print {
+    body {
+        background: #ffffff;
+    }
+
+    .page-wrapper {
+        padding-bottom: 0;
+    }
+
+    .page-header-sticky {
+        position: static;
+    }
+
+    .item-card {
+        box-shadow: none;
+        border: 1px solid #dddddd;
+    }
+
+    .order-bar,
+    .main-nav,
+    .breadcrumbs,
+    .section-jumps {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .shared-header-inner img.logo {
+        max-width: 140px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog-title-block h1 {
+        font-size: 18px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        scroll-margin-top: 120px;
+    }
+}
+
+@media (max-width: 560px) {
+    .shared-header-inner {
+        flex-wrap: wrap;
+        gap: 6px;
+        padding-top: 6px;
+        padding-bottom: 4px;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
