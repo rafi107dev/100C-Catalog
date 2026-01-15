@@ -484,6 +484,21 @@ body {
         transform: none;
     }
 
+    /* On mobile, disable hover-based dropdown - use only JS toggle */
+    .closeout-dropdown:hover .nav-dropdown-menu,
+    .closeout-dropdown:focus-within .nav-dropdown-menu,
+    .nav-dropdown-menu:hover {
+        display: none;
+        opacity: 0;
+    }
+
+    /* Only show menu when JS adds .is-open class */
+    .closeout-dropdown.is-open .nav-dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     .nav-dropdown-menu {
         position: fixed;
         top: 70px;
