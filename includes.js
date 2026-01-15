@@ -18,12 +18,35 @@ document.addEventListener("DOMContentLoaded", function () {
             updateCartCount(loadCart());
         }
 
-        // Close dropdown menu on scroll (especially for mobile)
+        // Mobile dropdown handling
+        var dropdown = document.querySelector(".closeout-dropdown");
         var dropdownToggle = document.querySelector(".nav-dropdown-toggle");
-        if (dropdownToggle) {
+        var dropdownMenu = document.querySelector(".nav-dropdown-menu");
+
+        if (dropdown && dropdownToggle && dropdownMenu) {
+            // Toggle dropdown on click (for mobile)
+            dropdownToggle.addEventListener("click", function(e) {
+                e.preventDefault();
+                dropdown.classList.toggle("is-open");
+            });
+
+            // Close on scroll
             window.addEventListener("scroll", function() {
+                dropdown.classList.remove("is-open");
                 dropdownToggle.blur();
             }, { passive: true });
+
+            // Close when clicking outside
+            document.addEventListener("click", function(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove("is-open");
+                }
+            });
+
+            // Close when a menu item is clicked
+            dropdownMenu.addEventListener("click", function() {
+                dropdown.classList.remove("is-open");
+            });
         }
     });
     loadInclude("site-footer", "includes/footer.html");

@@ -434,9 +434,10 @@ body {
     height: 12px;
 }
 
-/* Show dropdown when hovered/focused */
+/* Show dropdown when hovered/focused or JS toggled open */
 .closeout-dropdown:hover .nav-dropdown-menu,
 .closeout-dropdown:focus-within .nav-dropdown-menu,
+.closeout-dropdown.is-open .nav-dropdown-menu,
 .nav-dropdown-menu:hover {
     display: block;
     opacity: 1;
@@ -1449,13 +1450,13 @@ body {
    Mobile phones (max 480px)
    ===================================== */
 @media (max-width: 480px) {
-    /* Prevent horizontal overflow */
+    /* Prevent horizontal overflow - use clip to preserve sticky positioning */
     body {
-        overflow-x: hidden;
+        overflow-x: clip;
     }
 
     .page-wrapper {
-        overflow-x: hidden;
+        overflow-x: clip;
     }
 
     /* Header logo sizing */
