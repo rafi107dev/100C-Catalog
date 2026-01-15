@@ -325,6 +325,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 15px 60px 15px;
+    padding-bottom: 50vh; /* Allow last section to scroll to top */
     box-sizing: border-box;
 }
 
