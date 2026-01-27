@@ -74,3 +74,11 @@ git push origin main
 - No build process required - edit HTML/CSS/JS directly
 - Test changes by opening index.html in a browser
 - Use browser dev tools for debugging
+
+## Response Format
+**Always end every response with the project identifier line:**
+```
+---
+Project: D:\D-Claude\100C-Catalog
+```
+This helps identify which project window is active since the CMD title gets overwritten.
