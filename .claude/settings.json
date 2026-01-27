@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git fetch*)",
+      "Bash(git branch*)",
+      "Bash(git remote -v)",
+      "Bash(ls*)",
+      "Bash(dir*)",
+      "Bash(cat*)",
+      "Bash(type*)",
+      "Bash(pwd)",
+      "Bash(cd*)"
+    ],
+    "deny": []
+  },
+  "_approvalLog": {
+    "description": "Track command approvals over time. Update this as user approves new commands during sessions.",
+    "initialSetup": "2026-01-27",
+    "sessionNotes": [
+      {
+        "date": "2026-01-27",
+        "note": "Initial setup - added common git and file navigation commands"
+      }
+    ]
+  }
+}
